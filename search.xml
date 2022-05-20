@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>博客的开始</title>
+      <link href="/2022/05/20/git%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
+      <url>/2022/05/20/git%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%BC%80%E5%A7%8B/</url>
+      
+        <content type="html"><![CDATA[<hr><p><img src="/assets/first.png" alt="第一篇文章的开始"></p><h3 id="1、起源"><a href="#1、起源" class="headerlink" title="1、起源"></a>1、起源</h3><blockquote><p>3-4年前看到别人开了git博客，心生羡慕，想着自己也开个。git被墙、hexo不熟悉、文笔不好等等各种问题，最后也就不了了之了。<br>昨天在<a href="https://juejin.cn/">掘金</a>闲逛。看到<a href="https://juejin.cn/post/7080820051422478366">Vue3.2 + TypeScript + Pinia + Vite2 + Element-Plus管理系统（开源啦🎉🎉）</a>文章，仔细研读，发现很有意思，进而对博主产生兴趣。在线预览里找到博主的<a href="http://www.spicyboy.cn/">Blog</a>。被置顶文章吸引，原来开git博客是如此简单，跟着步骤慢慢来，反复操作两三遍(经验+1, +1, +1…)，成功开通。</p></blockquote><h3 id="2、博客功能"><a href="#2、博客功能" class="headerlink" title="2、博客功能"></a>2、博客功能</h3><blockquote><p>记录在技术道路上遇到的坎坷以及解决办法(BUG是如何产生和修复的)、技术开荒心路历程(新技术尝鲜)、生活中琐事唠叨、各种小记总结等等</p></blockquote><h3 id="3、博客更新"><a href="#3、博客更新" class="headerlink" title="3、博客更新"></a>3、博客更新</h3><blockquote><p>不定时更新，坚持做到每周至少更新一次技术性文章吧。文笔慢慢练，多思考、多实践、多总结、坚持就是胜利。</p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2022/05/19/hello-world/"/>
       <url>/2022/05/19/hello-world/</url>
