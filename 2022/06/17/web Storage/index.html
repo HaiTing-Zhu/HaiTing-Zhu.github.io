@@ -6,7 +6,7 @@
 Cookiecookie指的是会话跟踪技术。一般用于网站辨别用户身份。通过HTTP的请求头发送到服务器。主要特点有：
 
 跨域限制；
-可以设置有效期，超过有限期自动清楚；
+可以设置有效期，超过有限期自动清除；
 在不同浏览器存储是数据大小不一样，但最大容量基本都在4KB；
 只能存储字符串类型。
 
@@ -24,7 +24,7 @@ document.cookie = `userName=zhuht; expires=${expire.."><meta name="generator" co
 <h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>cookie指的是会话跟踪技术。一般用于网站辨别用户身份。通过HTTP的请求头发送到服务器。主要特点有：</p>
 <ol>
 <li>跨域限制；</li>
-<li>可以设置有效期，超过有限期自动清楚；</li>
+<li>可以设置有效期，超过有限期自动清除；</li>
 <li>在不同浏览器存储是数据大小不一样，但最大容量基本都在4KB；</li>
 <li>只能存储字符串类型。</li>
 </ol>
@@ -66,7 +66,7 @@ localStorage.clear ()
 // 取某个索引的key，index为localStorage列表下标
 localStorage.key (index)
 </code></pre>
-<h4 id="SessionStorage"><a href="#SessionStorage" class="headerlink" title="SessionStorage"></a>SessionStorage</h4><p>sessionStorage是在当前会话窗口有效，sessionStorage与上面localStorage类似，其特点为：</p>
+<h4 id="SessionStorage"><a href="#SessionStorage" class="headerlink" title="SessionStorage"></a>SessionStorage</h4><p>sessionStorage只在当前会话窗口有效，sessionStorage与上面localStorage类似，其特点为：</p>
 <ol>
 <li>与网页相同的生命周期，浏览器关闭后删除数据；</li>
 <li>同源同窗口时，数据始终存在，即使刷新或者进入另一个同源窗口，数据仍在。同时打开独立的窗口，即使同一页面，sessionStorage的对象也不一样，数据也不一样。</li>
