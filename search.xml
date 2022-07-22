@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>记录一次SSH提交GIT</title>
+      <link href="/2022/07/22/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1SSH%E6%8F%90%E4%BA%A4GIT/"/>
+      <url>/2022/07/22/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1SSH%E6%8F%90%E4%BA%A4GIT/</url>
+      
+        <content type="html"><![CDATA[<hr><p><img src="/assets/sshgit.png" alt="记录一次SSH提交GIT"></p><h2 id="MAC-环境SSH密钥生成"><a href="#MAC-环境SSH密钥生成" class="headerlink" title="MAC 环境SSH密钥生成"></a>MAC 环境SSH密钥生成</h2><h3 id="1、打开Terminal-终端"><a href="#1、打开Terminal-终端" class="headerlink" title="1、打开Terminal(终端)"></a>1、打开Terminal(终端)</h3><h3 id="2、进入-ssh文件"><a href="#2、进入-ssh文件" class="headerlink" title="2、进入.ssh文件"></a>2、进入.ssh文件</h3><pre><code class="base">cd .ssh</code></pre><h3 id="3、输入生成密钥命令"><a href="#3、输入生成密钥命令" class="headerlink" title="3、输入生成密钥命令"></a>3、输入生成密钥命令</h3><pre><code class="base">// 替换github电子邮件地址ssh-keygen -t ed25519 -C "email@example.com"</code></pre><h3 id="4、后续提示"><a href="#4、后续提示" class="headerlink" title="4、后续提示"></a>4、后续提示</h3><p>直接点的回车</p><pre><code class="base">// 文件保存的路径Enter a file in which to save the key (/Users/you/.ssh/id_algorithm): [Press enter]// 输入密码Enter passphrase (empty for no passphrase): [Type a passphrase]// 再次输入密码Enter same passphrase again: [Type passphrase again]</code></pre><h3 id="5、查看config文件，并且将密钥加载到-ssh-agent"><a href="#5、查看config文件，并且将密钥加载到-ssh-agent" class="headerlink" title="5、查看config文件，并且将密钥加载到 ssh-agent"></a>5、查看config文件，并且将密钥加载到 ssh-agent</h3><pre><code class="base">// 查看是否有config文件ls// 没有则创建config文件touch config// 修改里面的配置文件Host * // 匹配所有主机名  AddKeysToAgent yes // 是否自动将 key 加入到 ssh-agent  IdentityFile ~/.ssh/id_ed25519 // 需要通过私钥登陆的时候的文件</code></pre><h3 id="6、将-SSH-公钥复制到剪贴板"><a href="#6、将-SSH-公钥复制到剪贴板" class="headerlink" title="6、将 SSH 公钥复制到剪贴板"></a>6、将 SSH 公钥复制到剪贴板</h3><pre><code class="base">pbcopy &lt; ~/.ssh/id_ed25519.pub</code></pre><h3 id="7、github任何页面的右上角，单击个人资料照片，然后单击-Settings"><a href="#7、github任何页面的右上角，单击个人资料照片，然后单击-Settings" class="headerlink" title="7、github任何页面的右上角，单击个人资料照片，然后单击 Settings"></a>7、github任何页面的右上角，单击个人资料照片，然后单击 Settings</h3><p><img src="/assets/sshgit1.jpg" alt="记录一次SSH提交GIT"></p><h3 id="8、在边栏的“Access（访问）”部分中，单击-SSH-和-GPG-密钥。"><a href="#8、在边栏的“Access（访问）”部分中，单击-SSH-和-GPG-密钥。" class="headerlink" title="8、在边栏的“Access（访问）”部分中，单击  SSH 和 GPG 密钥。"></a>8、在边栏的“Access（访问）”部分中，单击  SSH 和 GPG 密钥。</h3><p><img src="/assets/sshgit2.jpg" alt="记录一次SSH提交GIT"></p><h3 id="9、单击-New-SSH-key"><a href="#9、单击-New-SSH-key" class="headerlink" title="9、单击 New SSH key"></a>9、单击 New SSH key</h3><p><img src="/assets/sshgit3.jpg" alt="记录一次SSH提交GIT"></p><h3 id="10、将密钥粘贴到-“Key”（密钥）字段，单击-Add-SSH-key"><a href="#10、将密钥粘贴到-“Key”（密钥）字段，单击-Add-SSH-key" class="headerlink" title="10、将密钥粘贴到 “Key”（密钥）字段，单击 Add SSH key"></a>10、将密钥粘贴到 “Key”（密钥）字段，单击 Add SSH key</h3><p><img src="/assets/sshgit4.jpg" alt="记录一次SSH提交GIT"></p><h3 id="11、增加SSH后到展示。"><a href="#11、增加SSH后到展示。" class="headerlink" title="11、增加SSH后到展示。"></a>11、增加SSH后到展示。</h3><p><img src="/assets/sshgit5.jpg" alt="记录一次SSH提交GIT"></p><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><blockquote><p><a href="https://docs.github.com/cn/authentication/connecting-to-github-with-ssh">使用 SSH 连接到 GitHub</a></p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> GIT </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Learning English(三)</title>
       <link href="/2022/06/30/Learning%20Englsh(%E4%B8%89)/"/>
       <url>/2022/06/30/Learning%20Englsh(%E4%B8%89)/</url>

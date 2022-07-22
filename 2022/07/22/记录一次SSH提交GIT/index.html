@@ -1,0 +1,57 @@
+<!DOCTYPE html><html class="appearance-auto" lang="zh-CN"><head><meta charset="UTF-8"><title>记录一次SSH提交GIT</title><meta name="description" content="这家伙很懒"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><link rel="icon" href="/images/favicon.png"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="
+
+MAC 环境SSH密钥生成1、打开Terminal(终端)2、进入.ssh文件cd .ssh
+
+3、输入生成密钥命令// 替换github电子邮件地址
+ssh-keygen -t ed25519 -C &quot;email@example.com&quot;
+
+4、后续提示直接点的回车
+// 文件保存的路径
+Enter a file in which to save the key (/Users/you/.ssh/id_algorithm): [Press enter]
+
+// 输入密码
+Enter passphrase (empty for no passphrase): [Type a passphrase]
+
+// 再次输入密码
+Enter same passphrase again: [Type passphr.."><meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">ZHT's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">记录一次SSH提交GIT</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">点击返回顶部</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">首页</a></h3><h3 class="is-inline-block"><a href="/about">关于</a></h3><h3 class="is-inline-block"><a href="/archives">归档</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">首页</a></h3><h3 class="is-inline-block"><a href="/about">关于</a></h3><h3 class="is-inline-block"><a href="/archives">归档</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MAC-%E7%8E%AF%E5%A2%83SSH%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90"><span class="toc-text">MAC 环境SSH密钥生成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%89%93%E5%BC%80Terminal-%E7%BB%88%E7%AB%AF"><span class="toc-text">1、打开Terminal(终端)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E8%BF%9B%E5%85%A5-ssh%E6%96%87%E4%BB%B6"><span class="toc-text">2、进入.ssh文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E8%BE%93%E5%85%A5%E7%94%9F%E6%88%90%E5%AF%86%E9%92%A5%E5%91%BD%E4%BB%A4"><span class="toc-text">3、输入生成密钥命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E5%90%8E%E7%BB%AD%E6%8F%90%E7%A4%BA"><span class="toc-text">4、后续提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E3%80%81%E6%9F%A5%E7%9C%8Bconfig%E6%96%87%E4%BB%B6%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%B0%86%E5%AF%86%E9%92%A5%E5%8A%A0%E8%BD%BD%E5%88%B0-ssh-agent"><span class="toc-text">5、查看config文件，并且将密钥加载到 ssh-agent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6%E3%80%81%E5%B0%86-SSH-%E5%85%AC%E9%92%A5%E5%A4%8D%E5%88%B6%E5%88%B0%E5%89%AA%E8%B4%B4%E6%9D%BF"><span class="toc-text">6、将 SSH 公钥复制到剪贴板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7%E3%80%81github%E4%BB%BB%E4%BD%95%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8F%B3%E4%B8%8A%E8%A7%92%EF%BC%8C%E5%8D%95%E5%87%BB%E4%B8%AA%E4%BA%BA%E8%B5%84%E6%96%99%E7%85%A7%E7%89%87%EF%BC%8C%E7%84%B6%E5%90%8E%E5%8D%95%E5%87%BB-Settings"><span class="toc-text">7、github任何页面的右上角，单击个人资料照片，然后单击 Settings</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8%E3%80%81%E5%9C%A8%E8%BE%B9%E6%A0%8F%E7%9A%84%E2%80%9CAccess%EF%BC%88%E8%AE%BF%E9%97%AE%EF%BC%89%E2%80%9D%E9%83%A8%E5%88%86%E4%B8%AD%EF%BC%8C%E5%8D%95%E5%87%BB-SSH-%E5%92%8C-GPG-%E5%AF%86%E9%92%A5%E3%80%82"><span class="toc-text">8、在边栏的“Access（访问）”部分中，单击  SSH 和 GPG 密钥。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9%E3%80%81%E5%8D%95%E5%87%BB-New-SSH-key"><span class="toc-text">9、单击 New SSH key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10%E3%80%81%E5%B0%86%E5%AF%86%E9%92%A5%E7%B2%98%E8%B4%B4%E5%88%B0-%E2%80%9CKey%E2%80%9D%EF%BC%88%E5%AF%86%E9%92%A5%EF%BC%89%E5%AD%97%E6%AE%B5%EF%BC%8C%E5%8D%95%E5%87%BB-Add-SSH-key"><span class="toc-text">10、将密钥粘贴到 “Key”（密钥）字段，单击 Add SSH key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11%E3%80%81%E5%A2%9E%E5%8A%A0SSH%E5%90%8E%E5%88%B0%E5%B1%95%E7%A4%BA%E3%80%82"><span class="toc-text">11、增加SSH后到展示。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol></li></ol></div><div class="column is-9"><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">记录一次SSH提交GIT</h1><time class="has-text-grey" datetime="2022-07-21T16:00:00.000Z">2022-07-22</time><header class="my-4"><a href="/tags/GIT"><i class="tag post-item-tag">GIT</i></a></header><article class="mt-2 post-content"><hr>
+<p><img src="/assets/sshgit.png" alt="记录一次SSH提交GIT"></p>
+<h2 id="MAC-环境SSH密钥生成"><a href="#MAC-环境SSH密钥生成" class="headerlink" title="MAC 环境SSH密钥生成"></a>MAC 环境SSH密钥生成</h2><h3 id="1、打开Terminal-终端"><a href="#1、打开Terminal-终端" class="headerlink" title="1、打开Terminal(终端)"></a>1、打开Terminal(终端)</h3><h3 id="2、进入-ssh文件"><a href="#2、进入-ssh文件" class="headerlink" title="2、进入.ssh文件"></a>2、进入.ssh文件</h3><pre><code class="base">cd .ssh
+</code></pre>
+<h3 id="3、输入生成密钥命令"><a href="#3、输入生成密钥命令" class="headerlink" title="3、输入生成密钥命令"></a>3、输入生成密钥命令</h3><pre><code class="base">// 替换github电子邮件地址
+ssh-keygen -t ed25519 -C "email@example.com"
+</code></pre>
+<h3 id="4、后续提示"><a href="#4、后续提示" class="headerlink" title="4、后续提示"></a>4、后续提示</h3><p>直接点的回车</p>
+<pre><code class="base">// 文件保存的路径
+Enter a file in which to save the key (/Users/you/.ssh/id_algorithm): [Press enter]
+
+// 输入密码
+Enter passphrase (empty for no passphrase): [Type a passphrase]
+
+// 再次输入密码
+Enter same passphrase again: [Type passphrase again]
+</code></pre>
+<h3 id="5、查看config文件，并且将密钥加载到-ssh-agent"><a href="#5、查看config文件，并且将密钥加载到-ssh-agent" class="headerlink" title="5、查看config文件，并且将密钥加载到 ssh-agent"></a>5、查看config文件，并且将密钥加载到 ssh-agent</h3><pre><code class="base">// 查看是否有config文件
+ls
+
+// 没有则创建config文件
+touch config
+
+
+// 修改里面的配置文件
+Host * // 匹配所有主机名
+  AddKeysToAgent yes // 是否自动将 key 加入到 ssh-agent
+  IdentityFile ~/.ssh/id_ed25519 // 需要通过私钥登陆的时候的文件
+</code></pre>
+<h3 id="6、将-SSH-公钥复制到剪贴板"><a href="#6、将-SSH-公钥复制到剪贴板" class="headerlink" title="6、将 SSH 公钥复制到剪贴板"></a>6、将 SSH 公钥复制到剪贴板</h3><pre><code class="base">pbcopy &lt; ~/.ssh/id_ed25519.pub
+</code></pre>
+<h3 id="7、github任何页面的右上角，单击个人资料照片，然后单击-Settings"><a href="#7、github任何页面的右上角，单击个人资料照片，然后单击-Settings" class="headerlink" title="7、github任何页面的右上角，单击个人资料照片，然后单击 Settings"></a>7、github任何页面的右上角，单击个人资料照片，然后单击 Settings</h3><p><img src="/assets/sshgit1.jpg" alt="记录一次SSH提交GIT"></p>
+<h3 id="8、在边栏的“Access（访问）”部分中，单击-SSH-和-GPG-密钥。"><a href="#8、在边栏的“Access（访问）”部分中，单击-SSH-和-GPG-密钥。" class="headerlink" title="8、在边栏的“Access（访问）”部分中，单击  SSH 和 GPG 密钥。"></a>8、在边栏的“Access（访问）”部分中，单击  SSH 和 GPG 密钥。</h3><p><img src="/assets/sshgit2.jpg" alt="记录一次SSH提交GIT"></p>
+<h3 id="9、单击-New-SSH-key"><a href="#9、单击-New-SSH-key" class="headerlink" title="9、单击 New SSH key"></a>9、单击 New SSH key</h3><p><img src="/assets/sshgit3.jpg" alt="记录一次SSH提交GIT"></p>
+<h3 id="10、将密钥粘贴到-“Key”（密钥）字段，单击-Add-SSH-key"><a href="#10、将密钥粘贴到-“Key”（密钥）字段，单击-Add-SSH-key" class="headerlink" title="10、将密钥粘贴到 “Key”（密钥）字段，单击 Add SSH key"></a>10、将密钥粘贴到 “Key”（密钥）字段，单击 Add SSH key</h3><p><img src="/assets/sshgit4.jpg" alt="记录一次SSH提交GIT"></p>
+<h3 id="11、增加SSH后到展示。"><a href="#11、增加SSH后到展示。" class="headerlink" title="11、增加SSH后到展示。"></a>11、增加SSH后到展示。</h3><p><img src="/assets/sshgit5.jpg" alt="记录一次SSH提交GIT"></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.github.com/cn/authentication/connecting-to-github-with-ssh">使用 SSH 连接到 GitHub</a></p>
+</blockquote>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2022/06/30/Learning%20Englsh(%E4%B8%89)/" title="Learning English(三)"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">上一页: Learning English(三)</span></a></section></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/HaiTing-Zhu"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--></section><p><span>Copyright ©</span><span> ZHT 2022</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/post.js"></script></body></html>
