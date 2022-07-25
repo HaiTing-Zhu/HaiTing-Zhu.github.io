@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>Window Location 详解</title>
+      <link href="/2022/07/25/Window%20Location%E8%AF%A6%E8%A7%A3/"/>
+      <url>/2022/07/25/Window%20Location%E8%AF%A6%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<hr><p><img src="/assets/window.location.png" alt="Window.location"></p><blockquote><p>window.location 对象用于获得当前页面的地址 (URL)，并把浏览器重定向到新的页面，在编写时可不使用 window 这个前缀。</p></blockquote><pre><code class="javascript">// 整个URl字符串(完整的URL)// https://blog.zhuhaiting.com/about/?q=front-end#onelocation.href;// 协议部分// https:location.protocol;// 主机部分// blog.zhuhaiting.comlocation.hostname;// 端口号// 80，没有为空location.port;// 站点主地址// https://blog.zhuhaiting.comlocation.origin;// 主机名和当前URL的端口号// blog.zhuhaiting.comlocation.host;// 路径部分(文件地址)// /about/location.pathname;// 查询部分——从问号？开始的URL//  ?q=front-endlocation.search;//锚部分 #号后面// #onelocation.hash;// assign——加载新的文档// location.assign("https://www.baidu.com")location.assign();// reload——重新加载当前文档// location.reload(true) 默认 false——客户端缓存里取当前页，true——服务端取最新的页面, 相当于客户端点击 F5("刷新")location.reload();// replace——用新的文档替换当前文档,无浏览历史纪录,不能使用“前进”和“后退”// location.replace("https://www.baidu.com")location.replace();</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 性能 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>记录一次SSH提交GIT</title>
       <link href="/2022/07/22/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1SSH%E6%8F%90%E4%BA%A4GIT/"/>
       <url>/2022/07/22/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1SSH%E6%8F%90%E4%BA%A4GIT/</url>
