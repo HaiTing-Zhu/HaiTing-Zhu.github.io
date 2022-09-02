@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Node 打印目录树</title>
+      <link href="/2022/09/02/node%20%E6%89%93%E5%8D%B0%E7%9B%AE%E5%BD%95%E6%A0%91/"/>
+      <url>/2022/09/02/node%20%E6%89%93%E5%8D%B0%E7%9B%AE%E5%BD%95%E6%A0%91/</url>
+      
+        <content type="html"><![CDATA[<hr><p><img src="/assets/nodejs-logo-green.png" alt="node"></p><blockquote><p>学习Node的(fs)File system和Path内置模块，通过两个模块的功能做个当前文件目录树，并且打印出来</p><p>缕缕逻辑后发现，其实也并不难，一个递归就能解决。通过判断是否文件夹，文件直接打印，文件夹打印并且递归</p></blockquote><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="js">// 引入内置模块const fs = require('fs')const path = require('path')// 获取当前文件的绝对路径const target = path.resolve(__dirname)// 文件层级let index = 0const dirTree = (dirPath) =&gt; {    if(fs.statSync(dirPath).isDirectory()) {        // 文件夹操作        // 打印当前文件夹名称        console.log(strBranches(index), getCurrName(dirPath));        const dirArr = fs.readdirSync(dirPath)        // 目录层级++        index ++        for (let i = 0;i &lt; dirArr.length; i++) {            // 递归操作            dirTree(path.join(dirPath, dirArr[i]))        }        index --    } else {        // 打印当前文件名称        console.log(strBranches(index), getCurrName(dirPath));    }}/** * 生成目录树分支字符串，根据文件的层级在打印前面输出缩进 */const strBranches = (index) =&gt; {    let str = ''    for (let i = 0; i &lt; index; i++) {        str += '|--'    }    return str}/** * 获取当前文件名称，basename：返回最后一个path */const getCurrName = (currPath) =&gt; {    return path.basename(currPath)}// 执行目录树dirTree(target)</code></pre><p><img src="/assets/dir-tree.jpg" alt="dir tree"></p><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><blockquote><p><a href="https://nodejs.org/dist/latest-v18.x/docs/api/fs.html">Nodejs File system</a><br><a href="https://nodejs.org/dist/latest-v18.x/docs/api/path.html">Nodejs Path</a></p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> node </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Learning English 6</title>
       <link href="/2022/08/29/Learning%20English6/"/>
       <url>/2022/08/29/Learning%20English6/</url>
