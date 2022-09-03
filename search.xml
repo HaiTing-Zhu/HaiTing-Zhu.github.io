@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Node 通过第三方模块(nodemailer)发送邮件</title>
+      <link href="/2022/09/03/node%20%E9%80%9A%E8%BF%87%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/"/>
+      <url>/2022/09/03/node%20%E9%80%9A%E8%BF%87%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<hr><p><img src="/assets/nodemailer.png" alt="nodemailer"></p><blockquote><p>在学习Nodejs的过程中，发现在<a href="https://www.npmjs.com/">NPM</a>里有很多有意思的第三方模块，记录使用node发送邮件服务的过程</p><p>在过程中参照nodemailer官方文档，一步步实现node服务发送电子邮件</p></blockquote><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>安装第三方模块nodemailer</p><pre><code class="js">npm install nodemailer</code></pre><p>引入nodemailer</p><pre><code class="js">const nodemailer = require('nodemailer')</code></pre><p>创建传输对象</p><ul><li><p>host、port、secure可通过node_modules/nodemailer/lib/well-known/services.json查看使用的邮件选项</p></li><li><p>auth.user: 发送邮件地址</p></li><li><p>auth.pass: 发送邮件SMTP服务密码，开启方式</p><ul><li>邮件</li><li>设置</li><li>POP3/SMTP/IMAP</li><li>开启POP3/SMTP服务</li></ul></li></ul><pre><code class="js">let transporter = nodemailer.createTransport({    host: "smtp.ethereal.com",    port: 465,    secure: true,    auth: {      user: 'Account.user',      pass: 'Account.pass',    },})</code></pre><p>创建接受邮件信息</p><ul><li>text 和 html 只能2选1，text只能为纯字符串</li></ul><pre><code class="js">const sendObj = {    from: '"你的好朋友👻" &lt;Account.user&gt;',    to: "to@example.com",    subject: "Hello world",    text: "Hello world",    html: "&lt;b&gt;Hello world?&lt;/b&gt;",}</code></pre><p>发送邮件</p><pre><code class="js">transporter.sendMail(sendObj, (err, data) =&gt; {    if (!err) {        console.log('🚀🚀🚀发送成功！')    }});</code></pre><p><img src="/assets/sendmailer-tips.jpg" alt="sendmailer-tips"><br><img src="/assets/sendmailer-success.jpg" alt="sendmailer-success"></p><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><blockquote><p><a href="https://nodemailer.com/about/">nodemailer</a></p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> node </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Node 打印目录树</title>
       <link href="/2022/09/02/node%20%E6%89%93%E5%8D%B0%E7%9B%AE%E5%BD%95%E6%A0%91/"/>
       <url>/2022/09/02/node%20%E6%89%93%E5%8D%B0%E7%9B%AE%E5%BD%95%E6%A0%91/</url>
